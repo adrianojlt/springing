@@ -1,4 +1,4 @@
-package pt.example.springing;
+package pt.example.springing.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
