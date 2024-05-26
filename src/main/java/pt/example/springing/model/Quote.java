@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,7 +22,7 @@ public class Quote {
     private String value;
     private LocalDateTime created;
     private LocalDateTime when;
-    private List<String> tags;
+    private Set<String> tags;
 
     @DBRef
     private Author author;

@@ -61,7 +61,6 @@ public class QuoteService {
 
         quote.get().getTags().remove(tag);
         quoteRepository.save(quote.get());
-
         return quote.get();
     }
 
@@ -73,12 +72,8 @@ public class QuoteService {
             throw new RuntimeException("Quote not found");
         }
 
-        if (!quote.get().getTags().contains(tag)) {
-            quote.get().getTags().add(tag);
-        }
-
+        quote.get().getTags().add(tag);
         quoteRepository.save(quote.get());
-
         return quote.get();
     }
 }
