@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  springapp:
+    image: greptips/springing:latest
+    container_name: springing
+    depends_on:
+      - mongodb
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/springing
+
+volumes:
+  mongo-data:
