@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="name" value="springing"/>
+    <appender name="LOKI" class="com.github.loki4j.logback.Loki4jAppender">
+
+        <http>
+            <url>http://192.168.1.3:3100/loki/api/v1/push</url>
+        </http>
+
+        <format>
+
+            <label>
+                <pattern>app=${name},host=${HOSTNAME},level=%level,class=%logger{36},method=%method</pattern>
+                <readMarkers>true</readMarkers>
+            </label>
+
+            <message>
+                <pattern>
+                    { "level":"%level", "class":"%logger{36}", "method":"%method", "thread":"%thread",
+                    "message": "%message"
+                    }
+                </pattern>
+            </message>
+
+        </format>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="LOKI" />
+    </root>
+
+</configuration>
