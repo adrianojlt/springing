@@ -5,6 +5,18 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### Maven ###
+target/                    # The Maven build directory where compiled code and packages are placed
+pom.xml.tag                # Tag for POM
+pom.xml.releaseBackup      # Backup during releases
+pom.xml.versionsBackup     # Backup during version updates
+pom.xml.next               # Next development version
+release.properties         # Release plugin properties
+dependency-reduced-pom.xml # Used by the Maven Shade plugin
+.mvn/                      # Maven wrapper files
+**/target/                 # Ignore all target directories recursively
+/target/
+
 ### STS ###
 .apt_generated
 .classpath

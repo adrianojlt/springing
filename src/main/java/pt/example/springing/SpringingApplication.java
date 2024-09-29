@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
 @RestController
+@SpringBootApplication
 public class SpringingApplication {
 
 	public static void main(String[] args) {
