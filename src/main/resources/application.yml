@@ -2,9 +2,11 @@ name: springing
 server:
   port: 8181
 spring:
+  profiles:
+    active: local # Default profile, used if no profile is specified
   data:
     mongodb:
-      uri: ${MONGODB_URI}
+      uri: ${MONGODB_URI:mongodb://localhost:27017/springing}
 springdoc:
   api-docs:
     path: /api-docs
