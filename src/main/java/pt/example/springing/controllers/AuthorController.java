@@ -10,8 +10,8 @@ import pt.example.springing.services.AuthorService;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/quotes")
 @RequiredArgsConstructor
+@RequestMapping(value = "/api/quotes")
 public class AuthorController {
 
     private final AuthorService authorService;
